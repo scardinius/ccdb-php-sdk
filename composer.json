@@ -1,0 +1,20 @@
+{
+    "name": "scardinius/ccdb-php-sdk",
+    "description": "PHP SDK for CCDB API REST",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Scardinius\\CcdbPhpSdk\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "scardinius",
+            "email": "scardinius@chords.pl"
+        }
+    ],
+    "require": {
+        "guzzlehttp/guzzle": "^7.4"
+    }
+}
