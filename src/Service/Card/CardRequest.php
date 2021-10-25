@@ -8,7 +8,7 @@ use GuzzleHttp\RequestOptions;
 use GuzzleHttp\Exception\GuzzleException;
 use Psr\Http\Message\ResponseInterface;
 
-class Card extends HttpClient
+class CardRequest extends HttpClient
 {
 
   private const GET_PATH = 'ccdb2/rest/1.0/cards/';
