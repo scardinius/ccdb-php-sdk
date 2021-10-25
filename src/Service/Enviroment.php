@@ -2,8 +2,8 @@
 
 namespace Scardinius\CcdbPhpSdk\Service;
 
-class Enviroment
+final class Enviroment
 {
-  const STAGING = 'staging';
-  const PRODUCTION = 'production';
+  public const STAGING = 'staging';
+  public const PRODUCTION = 'production';
 }
