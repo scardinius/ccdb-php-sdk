@@ -1,11 +1,11 @@
 <?php
 declare(strict_types=1);
 
-namespace Scardinius\CcdbPhpSdk\HttpClient;
+namespace Scardinius\CcdbPhpSdk\Service\HttpClient;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\RequestOptions;
-use Scardinius\CcdbPhpSdk\Configuration;
+use Scardinius\CcdbPhpSdk\Service\Configuration;
 
 class HttpClient {
 

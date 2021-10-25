@@ -1,9 +1,9 @@
 <?php
 
-namespace Scardinius\CcdbPhpSdk\Card;
+namespace Scardinius\CcdbPhpSdk\Service\Card;
 
-use Scardinius\CcdbPhpSdk\Configuration;
-use Scardinius\CcdbPhpSdk\HttpClient\HttpClient;
+use Scardinius\CcdbPhpSdk\Service\Configuration;
+use Scardinius\CcdbPhpSdk\Service\HttpClient\HttpClient;
 use GuzzleHttp\RequestOptions;
 use GuzzleHttp\Exception\GuzzleException;
 use Psr\Http\Message\ResponseInterface;

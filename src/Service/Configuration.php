@@ -1,6 +1,6 @@
 <?php
 
-namespace Scardinius\CcdbPhpSdk;
+namespace Scardinius\CcdbPhpSdk\Service;
 
 class Configuration
 {
