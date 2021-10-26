@@ -2,6 +2,8 @@
 
 namespace Scardinius\CcdbPhpSdk\Model;
 
+use Exception;
+
 class Card
 {
   /** @var string Card number without spaces and including letters */
@@ -57,6 +59,15 @@ class Card
 
   /** @var array  */
   private $customValues = [];
+
+  private $requiredProperties = [
+    'cardNumber',
+    'cardStatus',
+    'printedName',
+    'dateOfBirth',
+    'validTo',
+    'institutionName',
+  ];
 
   /**
    * @return string
@@ -312,6 +323,24 @@ class Card
   public function setIssueType(string $issueType): void
   {
     $this->issueType = $issueType;
+  }
+
+  /**
+   * @throws Exception
+   */
+  private function checkRequiredProperties(): void
+  {
+    $missing = [];
+    foreach ($this->requiredProperties as $property)
+    {
+      if (!$this->$property) {
+        $missing[] = $property;
+      }
+    }
+    if ($missing) {
+      $message = sprintf('Missing required properties: %s', implode(', ', $missing));
+      throw new Exception($message);
+    }
   }
 
 }
