@@ -3,6 +3,7 @@
 namespace Scardinius\CcdbPhpSdk\Model;
 
 use Exception;
+use SimpleXMLElement;
 
 class Card
 {
@@ -67,6 +68,25 @@ class Card
     'dateOfBirth',
     'validTo',
     'institutionName',
+  ];
+
+  private $printableProperties = [
+    'cardNumber',
+    'cardType',
+    'cardStatus',
+    'partNumber',
+    'printedName',
+    'firstName',
+    'lastName',
+    'dateOfBirth',
+    'gender',
+    'validFrom',
+    'validTo',
+    'institutionName',
+    'issuedBy',
+    'issuedOn',
+    'email',
+    'issueType',
   ];
 
   /**
@@ -341,6 +361,21 @@ class Card
       $message = sprintf('Missing required properties: %s', implode(', ', $missing));
       throw new Exception($message);
     }
+  }
+
+  /**
+   * @return string
+   * @throws Exception
+   */
+  public function prepareXml(): string {
+    $this->checkRequiredProperties();
+    $xml = new SimpleXMLElement('<?xml version="1.0" encoding="UTF-8"?><card></card>');
+    foreach ($this->printableProperties as $property) {
+      if ($this->$property) {
+        $xml->addChild($property, $this->$property);
+      }
+    }
+    return $xml->asXML();
   }
 
 }
