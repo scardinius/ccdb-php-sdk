@@ -11,7 +11,7 @@ use Psr\Http\Message\ResponseInterface;
 class CardRequest extends HttpClient
 {
 
-  private const GET_PATH = 'ccdb2/rest/1.0/cards';
+  private const PATH = 'ccdb2/rest/1.0/cards';
 
   public function __construct(Configuration $configuration)
   {
@@ -25,7 +25,7 @@ class CardRequest extends HttpClient
    * @throws GuzzleException
    */
   public function get(string $cardNumber): ResponseInterface {
-    $uri = sprintf('%s/%s', self::GET_PATH, $cardNumber);
+    $uri = sprintf('%s/%s', self::PATH, $cardNumber);
     return $this->client->get($uri, [
       RequestOptions::AUTH => [$this->configuration->getUsername(), $this->configuration->getPassword()],
     ]);
@@ -40,7 +40,7 @@ class CardRequest extends HttpClient
    */
   public function create(string $xmlContent): ResponseInterface
   {
-    return $this->client->post(self::GET_PATH, [
+    return $this->client->post(self::PATH, [
       RequestOptions::AUTH => [$this->configuration->getUsername(), $this->configuration->getPassword()],
       RequestOptions::BODY => $xmlContent,
       RequestOptions::HEADERS => ['Content-Type' => 'application/xml'],
