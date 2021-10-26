@@ -58,4 +58,260 @@ class Card
   /** @var array  */
   private $customValues = [];
 
+  /**
+   * @return string
+   */
+  public function getCardNumber(): string
+  {
+    return $this->cardNumber;
+  }
+
+  /**
+   * @param string $cardNumber
+   */
+  public function setCardNumber(string $cardNumber): void
+  {
+    $this->cardNumber = $cardNumber;
+  }
+
+  /**
+   * @return string
+   */
+  public function getCardType(): string
+  {
+    return $this->cardType;
+  }
+
+  /**
+   * @param string $cardType
+   */
+  public function setCardType(string $cardType): void
+  {
+    $this->cardType = $cardType;
+  }
+
+  /**
+   * @return string
+   */
+  public function getCardStatus(): string
+  {
+    return $this->cardStatus;
+  }
+
+  /**
+   * @param string $cardStatus
+   */
+  public function setCardStatus(string $cardStatus): void
+  {
+    $this->cardStatus = $cardStatus;
+  }
+
+  /**
+   * @return string
+   */
+  public function getPartNumber(): string
+  {
+    return $this->partNumber;
+  }
+
+  /**
+   * @param string $partNumber
+   */
+  public function setPartNumber(string $partNumber): void
+  {
+    $this->partNumber = $partNumber;
+  }
+
+  /**
+   * @return string
+   */
+  public function getPrintedName(): string
+  {
+    return $this->printedName;
+  }
+
+  /**
+   * @param string $printedName
+   */
+  public function setPrintedName(string $printedName): void
+  {
+    $this->printedName = $printedName;
+  }
+
+  /**
+   * @return string
+   */
+  public function getFirstName(): string
+  {
+    return $this->firstName;
+  }
+
+  /**
+   * @param string $firstName
+   */
+  public function setFirstName(string $firstName): void
+  {
+    $this->firstName = $firstName;
+  }
+
+  /**
+   * @return string
+   */
+  public function getLastName(): string
+  {
+    return $this->lastName;
+  }
+
+  /**
+   * @param string $lastName
+   */
+  public function setLastName(string $lastName): void
+  {
+    $this->lastName = $lastName;
+  }
+
+  /**
+   * @return string
+   */
+  public function getDateOfBirth(): string
+  {
+    return $this->dateOfBirth;
+  }
+
+  /**
+   * @param string $dateOfBirth
+   */
+  public function setDateOfBirth(string $dateOfBirth): void
+  {
+    $this->dateOfBirth = $dateOfBirth;
+  }
+
+  /**
+   * @return string
+   */
+  public function getGender(): string
+  {
+    return $this->gender;
+  }
+
+  /**
+   * @param string $gender
+   */
+  public function setGender(string $gender): void
+  {
+    $this->gender = $gender;
+  }
+
+  /**
+   * @return string
+   */
+  public function getValidFrom(): string
+  {
+    return $this->validFrom;
+  }
+
+  /**
+   * @param string $validFrom
+   */
+  public function setValidFrom(string $validFrom): void
+  {
+    $this->validFrom = $validFrom;
+  }
+
+  /**
+   * @return string
+   */
+  public function getValidTo(): string
+  {
+    return $this->validTo;
+  }
+
+  /**
+   * @param string $validTo
+   */
+  public function setValidTo(string $validTo): void
+  {
+    $this->validTo = $validTo;
+  }
+
+  /**
+   * @return string
+   */
+  public function getInstitutionName(): string
+  {
+    return $this->institutionName;
+  }
+
+  /**
+   * @param string $institutionName
+   */
+  public function setInstitutionName(string $institutionName): void
+  {
+    $this->institutionName = $institutionName;
+  }
+
+  /**
+   * @return string
+   */
+  public function getIssuedBy(): string
+  {
+    return $this->issuedBy;
+  }
+
+  /**
+   * @param string $issuedBy
+   */
+  public function setIssuedBy(string $issuedBy): void
+  {
+    $this->issuedBy = $issuedBy;
+  }
+
+  /**
+   * @return string
+   */
+  public function getIssuedOn(): string
+  {
+    return $this->issuedOn;
+  }
+
+  /**
+   * @param string $issuedOn
+   */
+  public function setIssuedOn(string $issuedOn): void
+  {
+    $this->issuedOn = $issuedOn;
+  }
+
+  /**
+   * @return string
+   */
+  public function getEmail(): string
+  {
+    return $this->email;
+  }
+
+  /**
+   * @param string $email
+   */
+  public function setEmail(string $email): void
+  {
+    $this->email = $email;
+  }
+
+  /**
+   * @return string
+   */
+  public function getIssueType(): string
+  {
+    return $this->issueType;
+  }
+
+  /**
+   * @param string $issueType
+   */
+  public function setIssueType(string $issueType): void
+  {
+    $this->issueType = $issueType;
+  }
+
 }
