@@ -7,7 +7,7 @@ use GuzzleHttp\Client;
 use GuzzleHttp\RequestOptions;
 use Scardinius\CcdbPhpSdk\Service\Configuration;
 
-class HttpClient {
+abstract class HttpClient {
 
   protected $configuration;
   protected $client;
