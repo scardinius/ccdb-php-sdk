@@ -1,0 +1,6 @@
+site_name: Documentation of CCDB PHP SDK
+theme: readthedocs
+
+pages:
+- 'Get card': get.md
+- 'Create card': create.md
