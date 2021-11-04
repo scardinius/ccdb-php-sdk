@@ -347,8 +347,10 @@ class Card
 
   /**
    * @param array $values
+   * @return Card
    */
-  public function load(array $values): void {
+  public function load(array $values): Card
+  {
     foreach ($values as $property => $value) {
       if (property_exists($this, $property)) {
         $functionName = 'set' . ucfirst($property);
@@ -357,6 +359,8 @@ class Card
         }
       }
     }
+
+    return $this;
   }
 
   /**

@@ -6,7 +6,6 @@ How to create `Card` object based on values in array.
 use \Scardinius\CcdbPhpSdk\Model\Card;
 
 $cardNumber = 'S000900100123A'; // your card
-$card = new Card();
 $values = [
   'cardNumber' => $cardNumber,
   'cardType' => CardType::ITIC,
@@ -17,7 +16,7 @@ $values = [
   'institutionName' => 'Starfleet',
   'invalidParameter' => 'will-not-trigger-error',
 ];
-$card->load($values);
+$card = (new Card())->load($values);
 
 $xml = $card->prepareXml();
 echo 'xml: ' . $xml;
