@@ -346,6 +346,20 @@ class Card
   }
 
   /**
+   * @param array $values
+   */
+  public function load(array $values): void {
+    foreach ($values as $property => $value) {
+      if (property_exists($this, $property)) {
+        $functionName = 'set' . ucfirst($property);
+        if (is_callable($functionName, true)) {
+          $this->$functionName($value);
+        }
+      }
+    }
+  }
+
+  /**
    * @throws Exception
    */
   private function checkRequiredProperties(): void
