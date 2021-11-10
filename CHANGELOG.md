@@ -1,5 +1,10 @@
 # CHANGELOG
 
+## 2021-11-10 - 0.3.0
+
+* support custom values and chips
+
+
 ## 2021-11-04 - v0.2.0
 
 * load card from array

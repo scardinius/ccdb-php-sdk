@@ -15,12 +15,14 @@ composer require scardinius/ccdb-php-sdk
 ## Features
 
 * getting cards
-* creating/updating cards (without `chips` and `customValues` parameters)
+* creating/updating cards
 
 ## Using
 
 * [getting cards](docs/get.md)
 * [creating cards](docs/create.md)
+* [set custom values and chips](docs/custom.md)
+* [load card based on array](docs/load.md)
 
 ## License
 
