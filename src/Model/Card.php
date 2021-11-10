@@ -348,6 +348,22 @@ class Card
   /**
    * @return array
    */
+  public function getChips(): array
+  {
+    return $this->chips;
+  }
+
+  /**
+   * @param array $chips
+   */
+  public function setChips(array $chips): void
+  {
+    $this->chips = $chips;
+  }
+
+  /**
+   * @return array
+   */
   public function getCustomValues(): array
   {
     return $this->customValues;
@@ -410,8 +426,28 @@ class Card
         $xml->addChild($property, $this->$property);
       }
     }
+    $this->prepareChips($xml);
     $this->prepareCustomValues($xml);
     return $xml->asXML();
+  }
+
+  /**
+   * @param SimpleXMLElement $xml
+   * @throws Exception
+   */
+  private function prepareChips(SimpleXMLElement $xml): void
+  {
+    if ($this->chips) {
+      foreach ($this->chips as $type => $number) {
+        if (!ChipType::isValid($type)) {
+          $message = sprintf('Invalid chip type "%s". Use one of: %s.', $type, implode(', ', ChipType::$options));
+          throw new Exception($message);
+        }
+        $chips = $xml->addChild('chips');
+        $chips->addChild('type', $type);
+        $chips->addChild('number', $number);
+      }
+    }
   }
 
   /**
