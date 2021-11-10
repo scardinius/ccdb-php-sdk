@@ -346,6 +346,22 @@ class Card
   }
 
   /**
+   * @return array
+   */
+  public function getCustomValues(): array
+  {
+    return $this->customValues;
+  }
+
+  /**
+   * @param array $customValues
+   */
+  public function setCustomValues(array $customValues): void
+  {
+    $this->customValues = $customValues;
+  }
+
+  /**
    * @param array $values
    * @return Card
    */
@@ -385,7 +401,8 @@ class Card
    * @return string
    * @throws Exception
    */
-  public function prepareXml(): string {
+  public function prepareXml(): string
+  {
     $this->checkRequiredProperties();
     $xml = new SimpleXMLElement('<?xml version="1.0" encoding="UTF-8"?><card></card>');
     foreach ($this->printableProperties as $property) {
@@ -393,7 +410,23 @@ class Card
         $xml->addChild($property, $this->$property);
       }
     }
+    $this->prepareCustomValues($xml);
     return $xml->asXML();
+  }
+
+  /**
+   * @param SimpleXMLElement $xml
+   */
+  private function prepareCustomValues(SimpleXMLElement $xml): void
+  {
+    if ($this->customValues) {
+      $customValues = $xml->addChild('customValues');
+      foreach ($this->customValues as $key => $value) {
+        $customValue = $customValues->addChild('customValue');
+        $customValue->addChild('key', $key);
+        $customValue->addChild('value', $value);
+      }
+    }
   }
 
 }
